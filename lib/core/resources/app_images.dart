@@ -1,5 +1,6 @@
 class AppImages {
   /* Images */
+  static final logoImage = "assets/images/logo.png";
   static final fieldImage = "assets/images/Field.png";
   static final rect1Image = "assets/images/Rectangle 1.png";
   static final rect2Image = "assets/images/Rectangle 2.png";
