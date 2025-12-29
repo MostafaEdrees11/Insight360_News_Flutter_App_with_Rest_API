@@ -7,4 +7,7 @@ class AppImages {
   static final rect4Image = "assets/images/Rectangle 4.png";
 
   /* Icons */
+  static final burgerMenuIcon = "assets/icons/burger-menu.svg";
+  static final searchIcon = "assets/icons/search.svg";
+  static final bellIcon = "assets/icons/bell.svg";
 }
