@@ -1,9 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:insight360_project/core/resources/app_colors.dart';
 import 'package:insight360_project/core/resources/app_images.dart';
+import 'package:insight360_project/features/widgets/elvated_button.dart';
+
+class NewsCategoryDetails {
+  String content;
+  Color backgroundColor;
+  Color contentColor;
+
+  NewsCategoryDetails(this.content, this.backgroundColor, this.contentColor);
+}
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
+
+  List<NewsCategoryDetails> newsCategoriesButtons = [
+    NewsCategoryDetails("All", AppColors.primaryColor, Colors.black),
+    NewsCategoryDetails("Politic", Colors.white, Colors.black),
+    NewsCategoryDetails("Sport", Colors.white, Colors.black),
+    NewsCategoryDetails("Education", Colors.white, Colors.black),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -67,6 +84,50 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
+          ],
+        ),
+      ),
+
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Breaking News",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  ),
+                  Text(
+                    "Show More",
+                    style: TextStyle(
+                      color: AppColors.secondaryColor,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 8),
+            Image.asset(AppImages.fieldImage, height: 140),
+            SizedBox(height: 8),
+            SizedBox(
+              height: 40,
+              child: ListView.builder(
+                itemCount: newsCategoriesButtons.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => Elvated_Button(
+                  content: newsCategoriesButtons[index].content,
+                  backgroundColor: newsCategoriesButtons[index].backgroundColor,
+                  contentColor: newsCategoriesButtons[index].contentColor,
+                ),
+              ),
+            ),
+            SizedBox(height: 8),
           ],
         ),
       ),
