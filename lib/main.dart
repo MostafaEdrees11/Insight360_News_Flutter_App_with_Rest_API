@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:insight360_project/features/home/view.dart';
+import 'package:insight360_project/features/search/view.dart';
 import 'package:insight360_project/features/splash/view.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'INSIGHT360',
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: SearchScreen(),
     );
   }
 }
