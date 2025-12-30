@@ -3,6 +3,8 @@ import 'package:insight360_project/features/home/view.dart';
 import 'package:insight360_project/features/search/view.dart';
 import 'package:insight360_project/features/splash/view.dart';
 
+import 'features/search_results/view.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'INSIGHT360',
       debugShowCheckedModeBanner: false,
-      home: SearchScreen(),
+      home: SearchResult(),
     );
   }
 }
