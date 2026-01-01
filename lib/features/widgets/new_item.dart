@@ -19,10 +19,10 @@ class NewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 95,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(child: Image.asset(newImage, width: 148, height: 91)),
+          Expanded(child: Image.network(newImage, fit: BoxFit.scaleDown, height: 91)),
           SizedBox(width: 8),
           SizedBox(
             width: 211,
@@ -32,11 +32,15 @@ class NewItem extends StatelessWidget {
                 Text(
                   newTitle,
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 SizedBox(height: 4),
                 Text(
                   newDescription,
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400,),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 SizedBox(height: 2),
                 Text(
@@ -48,6 +52,7 @@ class NewItem extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
+                SizedBox(height: 8,),
               ],
             ),
           ),

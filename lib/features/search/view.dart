@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:insight360_project/features/search_results/view.dart';
 
 import '../../core/resources/app_colors.dart';
 
@@ -9,11 +10,6 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      // appBar: AppBar(
-      //   title: Text("Search"),
-      //   backgroundColor: Colors.white,
-      //   centerTitle: true,
-      // ),
       body: SafeArea(
         child: Container(
           width: 366,
@@ -26,6 +22,9 @@ class SearchScreen extends StatelessWidget {
                     width: 270,
                     height: 48,
                     child: TextFormField(
+                      onFieldSubmitted: (value) {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => SearchResult(query: value,)));
+                      },
                       decoration: InputDecoration(
                         filled: true,
                         fillColor: AppColors.formColor,

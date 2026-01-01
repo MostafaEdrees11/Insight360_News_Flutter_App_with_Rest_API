@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:insight360_project/features/home/home_cubit.dart';
 import 'package:insight360_project/features/home/view.dart';
 import 'package:insight360_project/features/search/view.dart';
 import 'package:insight360_project/features/splash/view.dart';
 
+import 'features/new_details/view.dart';
 import 'features/search_results/view.dart';
 
 void main() {
@@ -15,10 +18,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'INSIGHT360',
-      debugShowCheckedModeBanner: false,
-      home: SearchResult(),
+    return BlocProvider(
+      create: (context) => HomeCubit(),
+      child: MaterialApp(
+        title: 'INSIGHT360',
+        debugShowCheckedModeBanner: false,
+        home: SplashScreen(),
+      ),
     );
   }
 }

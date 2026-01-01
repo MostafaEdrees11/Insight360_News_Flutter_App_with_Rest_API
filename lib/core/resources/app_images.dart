@@ -6,6 +6,7 @@ class AppImages {
   static final rect2Image = "assets/images/Rectangle 2.png";
   static final rect3Image = "assets/images/Rectangle 3.png";
   static final rect4Image = "assets/images/Rectangle 4.png";
+  static final playersImage = "assets/images/players.png";
 
   /* Icons */
   static final burgerMenuIcon = "assets/icons/burger-menu.svg";
